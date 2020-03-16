@@ -5,7 +5,7 @@ BallManager::BallManager()
 	spawnPoint = sf::Vector2f(350, 250);
 	initTextures();
 
-	for (int i = 0; i < 20; ++i)
+	for (int i = 0; i < 10; ++i)
 	{
 		balls.push_back(Ball());
 		balls[i].setAlive(false);
@@ -21,7 +21,7 @@ BallManager::~BallManager()
 
 void BallManager::spawn()
 {
-	std::cout << "number on screen = " << balls.size() << '\n';
+	std::cout << "Balls on display : " << onScreenCount << '\n';
 
 	for (int i = 0; i < balls.size(); ++i)
 	{
@@ -31,13 +31,14 @@ void BallManager::spawn()
 		if (!balls[i].isAlive())
 		{
 			balls[i].setAlive(true);
+			++onScreenCount;
 			balls[i].setVelocity(randXVel, randYVel);
 			balls[i].setPosition(spawnPoint);
 			return;
 		}
-
-		//addBall();
 	}
+
+	addBall();
 }
 
 void BallManager::update(float dt)
@@ -63,36 +64,42 @@ void BallManager::deathCheck()
 			if (balls[i].getPosition().x < -100)
 			{
 				balls[i].setAlive(false);
+				--onScreenCount;
 			}
 
 			if (balls[i].getPosition().x > 800)
 			{
 				balls[i].setAlive(false);
+				--onScreenCount;
 			}
 
 			if (balls[i].getPosition().y < -100)
 			{
 				balls[i].setAlive(false);
+				--onScreenCount;
 			}
 
 			if (balls[i].getPosition().y > 600)
 			{
 				balls[i].setAlive(false);
+				--onScreenCount;
 			}
-		}
+		}	
 	}
 }
 
 void BallManager::addBall()
 {
-	for (int i = 0; i < 20; ++i)
+	for (int i = 0; i < balls.size(); ++i)
 	{
 		if ((i = balls.size()) - 1)
 		{
+			std::cout << "Added ball number : " << balls.size() << '\n';
 			balls.push_back(Ball());
 			balls[i].setAlive(false);
 			balls[i].setTexture(&ballTexture);
 			balls[i].setSize(sf::Vector2f(60, 60));
+			break;
 		}	
 	}
 }
@@ -114,4 +121,9 @@ void BallManager::initTextures()
 	{
 		std::cout << "Could not load beach ball texture!\n";
 	}
+}
+
+int BallManager::getBallVectorSize()
+{
+	return balls.size();
 }

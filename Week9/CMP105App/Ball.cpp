@@ -2,7 +2,7 @@
 
 Ball::Ball()
 {
-
+	std::cout << "Ball created.\n";
 }
 
 Ball::~Ball()

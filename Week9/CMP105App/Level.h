@@ -16,15 +16,11 @@ public:
 	void update(float dt);
 	void render();
 
-	bool getSpawned();
-	void setSpawned(bool spawned);
-
 private:
 	// Default functions for rendering to the screen.
 	void beginDraw();
 	void endDraw();
 
-	bool spawned;
 	float delay;
 
 	// Default variables for level class.

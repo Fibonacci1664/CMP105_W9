@@ -5,7 +5,6 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	window = hwnd;
 	input = in;
 
-	spawned = false;
 	delay = 0;
 
 	// initialise game objects
@@ -21,14 +20,11 @@ void Level::handleInput(float dt)
 {
 	delay += dt;
 
-	if (input->isKeyDown(sf::Keyboard::Space) && delay > 2)
+	if (input->isKeyDown(sf::Keyboard::Space) && delay > 0.2f)
 	{
-		spawned = true;
 		bm.spawn();
 		delay = 0;
 	}
-
-	//std::cout << delay << '\n';
 }
 
 // Update game objects
@@ -55,14 +51,4 @@ void Level::beginDraw()
 void Level::endDraw()
 {
 	window->display();
-}
-
-bool Level::getSpawned()
-{
-	return spawned;
-}
-
-void Level::setSpawned(bool hasSpawned)
-{
-	spawned = hasSpawned;
 }
