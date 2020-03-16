@@ -45,6 +45,12 @@
     <ClCompile Include="BallManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SpikeManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Spike.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="README.txt">
@@ -77,6 +83,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BallManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SpikeManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spike.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

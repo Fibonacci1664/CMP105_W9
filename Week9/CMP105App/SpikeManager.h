@@ -1,24 +1,26 @@
 #pragma once
+
 #include <SFML\Graphics\RenderWindow.hpp>
-#include "Ball.h"
+#include "Spike.h"
 #include <iostream>
 
-class BallManager
+class SpikeManager
 {
 public:
-	BallManager();
-	~BallManager();
+	SpikeManager();
+	~SpikeManager();
 
 	void spawn();
 	void update(float dt);
 	void deathCheck();
-	void addBall();
+	void addSpike();
 	void render(sf::RenderWindow* window);
+	int getOnScreenCount();
 
 private:
-	std::vector<Ball> balls;
+	std::vector<Spike> spikes;
 	sf::Vector2f spawnPoint;
-	sf::Texture ballTexture;
+	sf::Texture spikeTexture;
 
 	int onScreenCount = 0;
 

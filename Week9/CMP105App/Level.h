@@ -5,6 +5,7 @@
 #include <string>
 #include <iostream>
 #include "BallManager.h"
+#include "SpikeManager.h"
 
 
 class Level{
@@ -27,5 +28,10 @@ private:
 	sf::RenderWindow* window;
 	Input* input;
 
+	sf::RectangleShape textBox;
+	sf::Font font;
+	sf::Text text;
+
 	BallManager bm;
+	SpikeManager spikeMan;
 };

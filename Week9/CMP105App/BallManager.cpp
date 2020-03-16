@@ -122,8 +122,3 @@ void BallManager::initTextures()
 		std::cout << "Could not load beach ball texture!\n";
 	}
 }
-
-int BallManager::getBallVectorSize()
-{
-	return balls.size();
-}
