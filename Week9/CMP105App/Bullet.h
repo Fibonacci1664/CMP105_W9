@@ -1,18 +1,18 @@
 #pragma once
-
 #include "Framework/GameObject.h"
-#include <iostream>
+#include<iostream>
 
-class Spike : public GameObject
+class Bullet : public GameObject
 {
 public:
-	Spike();
-	~Spike();
+	Bullet();
+	~Bullet();
 
 	void handleInput(float dt) override;
 	void update(float dt) override;
 
 private:
-	
+
+
 };
 

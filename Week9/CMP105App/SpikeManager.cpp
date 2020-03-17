@@ -41,7 +41,6 @@ void SpikeManager::spawn()
 			return;
 		}
 	}
-
 }
 
 void SpikeManager::update(float dt)
